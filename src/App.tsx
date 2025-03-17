@@ -1,9 +1,23 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
-import { Code, InstagramIcon, LockIcon, Menu, X } from "lucide-react";
+import {
+  Code,
+  InstagramIcon,
+  LockIcon,
+  Menu,
+  X,
+  Bot,
+  Wrench,
+  Code2,
+  Laptop,
+  Brain,
+  Database,
+} from "lucide-react";
 import { useInView } from "react-intersection-observer";
 import { BackgroundGradient } from "./components/ui/background-gradient";
 import { Vortex } from "./components/ui/vertox";
+import { Card, CardContent } from "./components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "./components/ui/avatar";
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -30,7 +44,7 @@ function App() {
     setIsMobileMenuOpen(false);
     const element = document.getElementById(sectionId);
     if (element) {
-      const offset = 80; // Account for navbar height
+      const offset = 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
 
@@ -44,7 +58,9 @@ function App() {
   const navLinks = [
     { name: "Home", section: "home" },
     { name: "Products", section: "products" },
+    { name: "Services", section: "services" },
     { name: "About", section: "about" },
+    { name: "Testimonials", section: "testimonials" },
     { name: "Contact", section: "contact" },
   ];
 
@@ -56,6 +72,7 @@ function App() {
       description:
         "AI-powered Instagram bot that discovers and shops outfits from reels",
       animation: -50,
+      // link:""
     },
     {
       icon: LockIcon,
@@ -63,6 +80,73 @@ function App() {
       title: "Stealth Project",
       description: "Building Apps on Superchain",
       animation: 50,
+    },
+    {
+      icon: Database,
+      iconColor: "text-green-500",
+      title: "Student-X",
+      description: "Digital Certificates for Real Humans",
+      animation: -50,
+      link: "student-x.vercel.app",
+    },
+    {
+      icon: Bot,
+      iconColor: "text-purple-500",
+      title: "Astro Chatbot",
+      description: "Advanced AI chatbot for astronomy enthusiasts",
+      animation: 50,
+      link: "astro-ai-eight.vercel.app/",
+    },
+  ];
+
+  const services = [
+    {
+      icon: Wrench,
+      title: "Custom AI Solutions",
+      description:
+        "Tailored artificial intelligence solutions for your business needs",
+    },
+    {
+      icon: Code2,
+      title: "Web Development",
+      description: "Full-stack web development with modern technologies",
+    },
+    {
+      icon: Laptop,
+      title: "Mobile Development",
+      description: "Cross-platform mobile app development",
+    },
+    {
+      icon: Brain,
+      title: "AI Consulting",
+      description: "Expert guidance on implementing AI in your business",
+    },
+  ];
+
+  const testimonials = [
+    {
+      name: "Sarah Johnson",
+      role: "CTO, TechCorp",
+      image:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&auto=format&fit=crop",
+      content:
+        "ByteProLabs transformed our business with their innovative AI solutions. Their team's expertise and dedication are unmatched.",
+    },
+    {
+      name: "Michael Chen",
+      role: "Founder, EduTech",
+      image:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&auto=format&fit=crop",
+      content:
+        "The Student-X platform developed by ByteProLabs has revolutionized how we deliver educational content. Outstanding work!",
+    },
+    {
+      name: "Emily Rodriguez",
+      role: "Product Manager, AI Innovations",
+      image:
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&auto=format&fit=crop",
+      content:
+        "Working with ByteProLabs was a game-changer for our AI implementation. Their expertise and support are exceptional.",
     },
   ];
 
@@ -72,6 +156,7 @@ function App() {
     title,
     description,
     animation,
+    link,
     inView,
   }: {
     icon: React.ElementType;
@@ -79,6 +164,7 @@ function App() {
     title: string;
     description: string;
     animation: number;
+    link: string;
     inView: boolean;
   }) => (
     <motion.div
@@ -87,13 +173,61 @@ function App() {
       transition={{ duration: 0.5, delay: animation < 0 ? 0.2 : 0.4 }}
     >
       <BackgroundGradient>
-        <div className="bg-gray-800 rounded-3xl p-8 cursor-pointer h-64 ">
-          <Icon className={`w-12 h-12 mb-4 ${iconColor} `} />
-          <h3 className="text-2xl font-bold mb-2 ">{title}</h3>
-          <p className="text-gray-400">{description}</p>
-        </div>
+        <a href={link ? link : "#"} className="block">
+          <div className="bg-gray-800 rounded-3xl p-8 cursor-pointer h-64 hover:bg-gray-700 transition-colors">
+            <Icon className={`w-12 h-12 mb-4 ${iconColor} `} />
+            <h3 className="text-2xl font-bold mb-2 ">{title}</h3>
+            <p className="text-gray-400">{description}</p>
+          </div>
+        </a>
       </BackgroundGradient>
     </motion.div>
+  );
+
+  const ServiceCard = ({
+    icon: Icon,
+    title,
+    description,
+  }: {
+    icon: React.ElementType;
+    title: string;
+    description: string;
+  }) => (
+    <Card className="bg-gray-800/50 border-gray-700">
+      <CardContent className="p-6">
+        <Icon className="w-12 h-12 mb-4 text-blue-400" />
+        <h3 className="text-xl font-bold mb-2 text-white">{title}</h3>
+        <p className="text-gray-400">{description}</p>
+      </CardContent>
+    </Card>
+  );
+
+  const TestimonialCard = ({
+    name,
+    role,
+    image,
+    content,
+  }: {
+    name: string;
+    role: string;
+    image: string;
+    content: string;
+  }) => (
+    <Card className="bg-gray-800/50 border-gray-700">
+      <CardContent className="p-6">
+        <div className="flex items-center mb-4">
+          <Avatar className="h-12 w-12">
+            <AvatarImage src={image} alt={name} />
+            <AvatarFallback>{name[0]}</AvatarFallback>
+          </Avatar>
+          <div className="ml-4">
+            <h4 className="text-lg font-semibold text-white">{name}</h4>
+            <p className="text-sm text-gray-400">{role}</p>
+          </div>
+        </div>
+        <p className="text-gray-300 italic">&ldquo;{content}&rdquo;</p>
+      </CardContent>
+    </Card>
   );
 
   return (
@@ -216,10 +350,31 @@ function App() {
           </motion.h2>
           <div
             ref={productRef}
-            className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8"
+            className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8"
           >
             {projects.map((project, index) => (
-              <ProjectCard key={index} {...project} inView={productInView} />
+              <ProjectCard
+                key={index}
+                {...project}
+                inView={productInView}
+                link={project.link || ''}
+              />
+            ))}
+          </div>
+        </section>
+
+        <section id="services" className="py-20 px-4 bg-gray-800/50">
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl md:text-4xl font-bold text-center mb-16"
+          >
+            Our Services
+          </motion.h2>
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {services.map((service, index) => (
+              <ServiceCard key={index} {...service} />
             ))}
           </div>
         </section>
@@ -262,6 +417,29 @@ function App() {
               growth through expert guidance, networking, and resources.
             </p>
           </motion.div>
+        </section>
+
+        <section id="testimonials" className="py-20 px-4">
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl md:text-4xl font-bold text-center mb-16"
+          >
+            What Our Clients Say
+          </motion.h2>
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+              >
+                <TestimonialCard {...testimonial} />
+              </motion.div>
+            ))}
+          </div>
         </section>
 
         <section ref={mentorRef} className="py-20 px-4">
