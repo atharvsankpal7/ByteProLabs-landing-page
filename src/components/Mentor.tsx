@@ -33,7 +33,7 @@ export function Mentor() {
         />
         <h3 className="text-2xl font-bold mb-3 text-white">Ram Devaraj</h3>
         <p className="text-gray-300 mb-6 text-lg">
-          CEO & Co-founder at Chronicles | Ex-Founder | 5 Successful Exits
+          CEO & Co-founder at The Cloudside | Ex-Founder | 5 Successful Exits
         </p>
         <p className="text-gray-400 text-lg leading-relaxed">
           Guiding us through technical excellence and business strategy with
@@ -43,12 +43,10 @@ export function Mentor() {
           href="https://www.linkedin.com/in/ramdevaraj/"
           target="_blank"
           rel="noreferrer"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="inline-block mt-6 text-blue-400 hover:text-blue-300 transition-colors"
+          className="inline-block mt-6 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition-colors"
         >
           Connect on LinkedIn
-        </motion.a>
+        </motion.a>{" "}
       </motion.div>
     </section>
   );

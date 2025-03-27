@@ -31,17 +31,11 @@ function ProjectCard({
       transition={{ duration: 0.5, delay: animation < 0 ? 0.2 : 0.4 }}
     >
       <BackgroundGradient>
-        <a
-          href={link ? link : "#products"}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="bg-gray-800 rounded-3xl p-8 cursor-pointer h-64">
-            <Icon className={`w-12 h-12 mb-4 ${iconColor}`} />
-            <h3 className="text-2xl font-bold mb-2">{title}</h3>
-            <p className="text-gray-400">{description}</p>
-          </div>
-        </a>
+        <div className="bg-gray-800 rounded-3xl p-8 cursor-pointer h-64">
+          <Icon className={`w-12 h-12 mb-4 ${iconColor}`} />
+          <h3 className="text-2xl font-bold mb-2">{title}</h3>
+          <p className="text-gray-400">{description}</p>
+        </div>
       </BackgroundGradient>
     </motion.div>
   );
@@ -65,7 +59,7 @@ export function Products({ products }: ProductsProps) {
       </motion.h2>
       <div
         ref={productRef}
-        className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8"
+        className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8"
       >
         {products.map((product, index) => (
           <ProjectCard key={index} {...product} inView={productInView} />

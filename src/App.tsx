@@ -53,13 +53,7 @@ function App() {
         "AI-powered Instagram bot that discovers and shops outfits from reels",
       animation: -50,
     },
-    {
-      icon: LockIcon,
-      iconColor: "text-blue-500",
-      title: "Stealth Project",
-      description: "Building Apps on Superchain",
-      animation: 50,
-    },
+
     {
       icon: BookOpen,
       iconColor: "text-green-500",
@@ -79,11 +73,7 @@ function App() {
   ];
 
   const services = [
-    {
-      icon: Wrench,
-      title: "Custom AI Solutions",
-      description: "Tailored artificial intelligence solutions for your business needs",
-    },
+ 
     {
       icon: Code2,
       title: "Web Development",
@@ -103,22 +93,22 @@ function App() {
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "CTO, TechCorp",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&auto=format&fit=crop",
-      content: "ByteProLabs transformed our business with their innovative AI solutions. Their team's expertise and dedication are unmatched.",
+      name: "Cloudside ",
+      // role: "CTO, TechCorp",
+      image: "https://thecloudside.com/images/cloudside-logo.png",
+      // content: "ByteProLabs transformed our business with their innovative AI solutions. Their team's expertise and dedication are unmatched.",
     },
     {
-      name: "Michael Chen",
-      role: "Founder, EduTech",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&auto=format&fit=crop",
-      content: "The Student-X platform developed by ByteProLabs has revolutionized how we deliver educational content. Outstanding work!",
+      name: "Spectra ",
+      // role: "Founder, EduTech",
+
+      image: "https://placehold.co/400x400",      // content: "The Student-X platform developed by ByteProLabs has revolutionized how we deliver educational content. Outstanding work!",
     },
     {
-      name: "Emily Rodriguez",
-      role: "Product Manager, AI Innovations",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&auto=format&fit=crop",
-      content: "Working with ByteProLabs was a game-changer for our AI implementation. Their expertise and support are exceptional.",
+      name: "Dance Vibes",
+      // role: "Product Manager, AI Innovations",
+      image: "https://images.squarespace-cdn.com/content/v1/66be3343cf1b2c4065be772a/dcb9e864-18e2-452d-a66e-5dd1b39cc0bc/Screenshot+2024-12-16+190851.png",
+      // content: "Working with ByteProLabs was a game-changer for our AI implementation. Their expertise and support are exceptional.",
     },
   ];
 

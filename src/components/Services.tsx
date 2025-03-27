@@ -34,7 +34,7 @@ export function Services({ services }: ServicesProps) {
       >
         Our Services
       </motion.h2>
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto grid  md:grid-cols-3 gap-8">
         {services.map((service, index) => (
           <ServiceCard key={index} {...service} />
         ))}
