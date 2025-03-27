@@ -85,9 +85,9 @@ function App() {
       description: "Cross-platform mobile app development",
     },
     {
-      icon: Brain,
-      title: "AI Consulting",
-      description: "Expert guidance on implementing AI in your business",
+      icon: Wrench,
+      title: "Custom AI Solutions",
+      description: "Tailored artificial intelligence solutions for your business needs",
     },
   ];
 
