@@ -1,15 +1,6 @@
 import { useRef } from "react";
 import { useScroll, useTransform } from "framer-motion";
-import {
-  InstagramIcon,
-  LockIcon,
-  BookOpen,
-  Bot,
-  Wrench,
-  Code2,
-  Laptop,
-  Brain,
-} from "lucide-react";
+import { InstagramIcon, LockIcon, BookOpen, Bot, Wrench, Code2, Laptop, Brain } from "lucide-react";
 
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
@@ -57,7 +48,7 @@ function App() {
     {
       icon: InstagramIcon,
       iconColor: "text-pink-500",
-      title: "RealShop",
+      title: "ReelShop",
       description:
         "AI-powered Instagram bot that discovers and shops outfits from reels",
       animation: -50,
@@ -67,7 +58,7 @@ function App() {
       icon: BookOpen,
       iconColor: "text-green-500",
       title: "Student-X",
-      description: "Digital Certificates for real Humans, ensuring only realy individuals can access and manage certificates",
+      description: "AI-powered personalized learning platform for students",
       animation: -50,
       link: "https://student-x.vercel.app/",
     },
@@ -82,6 +73,7 @@ function App() {
   ];
 
   const services = [
+ 
     {
       icon: Code2,
       title: "Web Development",
@@ -95,8 +87,7 @@ function App() {
     {
       icon: Wrench,
       title: "Custom AI Solutions",
-      description:
-        "Tailored artificial intelligence solutions for your business needs",
+      description: "Tailored artificial intelligence solutions for your business needs",
     },
   ];
 
@@ -108,16 +99,15 @@ function App() {
       // content: "ByteProLabs transformed our business with their innovative AI solutions. Their team's expertise and dedication are unmatched.",
     },
     {
-      name: "Celerity",
+      name: "Spectra ",
       // role: "Founder, EduTech",
 
-      image: "public/celerity-logo.jpg", // content: "The Student-X platform developed by ByteProLabs has revolutionized how we deliver educational content. Outstanding work!",
+      image: "/celerity.jpg",      // content: "The Student-X platform developed by ByteProLabs has revolutionized how we deliver educational content. Outstanding work!",
     },
     {
       name: "Dance Vibes",
       // role: "Product Manager, AI Innovations",
-      image:
-        "https://images.squarespace-cdn.com/content/v1/66be3343cf1b2c4065be772a/dcb9e864-18e2-452d-a66e-5dd1b39cc0bc/Screenshot+2024-12-16+190851.png",
+      image: "https://images.squarespace-cdn.com/content/v1/66be3343cf1b2c4065be772a/dcb9e864-18e2-452d-a66e-5dd1b39cc0bc/Screenshot+2024-12-16+190851.png",
       // content: "Working with ByteProLabs was a game-changer for our AI implementation. Their expertise and support are exceptional.",
     },
   ];
@@ -125,7 +115,7 @@ function App() {
   return (
     <div ref={containerRef} className="min-h-screen bg-gray-900 text-white">
       <Navbar navLinks={navLinks} scrollToSection={scrollToSection} />
-
+      
       <div className="pt-16">
         <Hero opacity={opacity} scale={scale} />
         <Products products={products} />

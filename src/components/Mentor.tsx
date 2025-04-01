@@ -33,7 +33,7 @@ export function Mentor() {
         />
         <h3 className="text-2xl font-bold mb-3 text-white">Ram Devaraj</h3>
         <p className="text-gray-300 mb-6 text-lg">
-          CEO & Co-founder at The Cloudside | Ex-Founder | 5 Successful Exits
+          CEO & Co-founder at The Cloudside | 2x Founder | 2x Successful Exits
         </p>
         <p className="text-gray-400 text-lg leading-relaxed">
           Guiding us through technical excellence and business strategy with
